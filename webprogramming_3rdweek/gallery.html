@@ -1,0 +1,105 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>갤러리 홈페이지</title>
+  <style>
+    /* CSS */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      margin: 10px;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .gallery-item:hover .caption {
+      opacity: 1;
+    }
+
+    h1{
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 150px;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    body {
+        background-color: black;
+        background-image: url("curtain1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+  </style>
+</head>
+<body>
+    <h1>Gallery of Famous Dogs</h1>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="images/image1.jpg" alt="doge">
+      <div class="caption">
+        <h3>Image 1</h3>
+        <p>doge</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/image2.jpg" alt="side eye dog">
+      <div class="caption">
+        <h3>Image 2</h3>
+        <p>side eye dog</p>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/image3.jpg" alt="let me do it for you">
+      <div class="caption">
+        <h3>Image 3</h3>
+        <p>let me do it for you</p>
+      </div>
+    </div>
+    <!-- 이하 이미지 추가 -->
+  </div>
+
+  <script>
+    // JavaScript
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    galleryItems.forEach((item) => {
+      const caption = item.querySelector(".caption");
+      const img = item.querySelector("img");
+
+      img.addEventListener("mouseover", () => {
+        caption.style.opacity = 1;
+      });
+
+      img.addEventListener("mouseout", () => {
+        caption.style.opacity = 0;
+      });
+    });
+  </script>
+</body>
+</html>
