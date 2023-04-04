@@ -7,6 +7,10 @@ class Animal {
   speak() {
     console.log(`${this.name}이(가) 소리를 냅니다.`);
   }
+
+  fight() {
+    console.log(`${this.name}이(가) 싸웁니다.`)
+  }
 }
 
 // 자식 클래스 정의하기
@@ -36,10 +40,6 @@ class Cat extends Animal {
   sleep() {
     console.log(`${this.name}이(가) 쿨쿨 잡니다.`);
   }
-
-  fight(Dog) {
-    console.log(`${this.name}와 ${Dog.name}가 싸웁니다.`);
-  }
 }
 
 // 객체 생성하기
@@ -51,4 +51,4 @@ const cat = new Cat("네로");
 cat.speak();
 cat.sleep();
 
-cat.fight(dog);
+dog.fight();
